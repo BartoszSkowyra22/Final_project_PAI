@@ -1,3 +1,57 @@
+#mapka {
+    width: auto;
+    height: 500px
+}
+
+#map .text-center{
+    margin-top: 30px;
+}
+
+/*Design mapy iframe*/
+
+#iframeMap {
+    border:0;
+    width: 1000px;
+    height: 500px;
+    margin-left: 10%;
+}
+
+@media screen and (max-width: 1400px){
+    #iframeMap {
+        width: 900px;
+        margin-left: 10%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    #iframeMap {
+        width: 800px;
+        margin-left: 8%;
+    }
+}
+
+@media screen and (max-width: 992px){
+    #iframeMap {
+        width: 600px;
+        margin-left: 8%;
+    }
+}
+@media screen and (max-width: 768px){
+    #iframeMap {
+        width: 500px;
+        margin-left: 2%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    #iframeMap {
+        width: 500px;
+        margin-left: 1%;
+    }
+}
+
+/*Style formularzy*/
+
 table{
     font-family: 'Anton', sans-serif;
 }
@@ -76,4 +130,10 @@ tbody .czerwone {
     color: #ff0000 !important;
     margin-left: 30px;
 }
+
+/*Koniec stylów formularzy*/
+
+
+
+
 
