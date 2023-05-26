@@ -1,0 +1,81 @@
+table{
+    font-family: 'Anton', sans-serif;
+}
+label {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 1.8em;
+    color: #ffc800;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+}
+
+.form_plain_text {
+    color: #ecf0f3;
+    margin-left: 20px !important;
+}
+
+.design-form label, input, button {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.design-field-form {
+    margin-left: 20px;
+    margin-right: 20px;
+    background: #ecf0f3;
+    padding-top: 8px;
+    padding-left: 10px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+#countryField {
+    margin-left: 20px;
+}
+
+.linear-design label, input, button{
+    font-size: 15px;
+}
+.design-btn {
+    color: white;
+    margin: 20px;
+    background: #ffc800;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 900;
+    padding: 10px 30px;
+    transition: 0.5s;
+}
+
+.design-btn:first-of-type{
+    margin-left: 45px;
+}
+
+#formularz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#formularz table {
+    border-radius: 8px;
+    padding: 20px !important;
+    background: #2c2c2c;
+}
+
+#countryField {
+    width: 155px;
+}
+
+tbody .czerwone {
+    display: none;
+    color: #ff0000 !important;
+    margin-left: 30px;
+}
+
