@@ -4,6 +4,7 @@ const tempElement = document.querySelector(".temperature-value p");
 const descElement = document.querySelector(".temperature-description p");
 const locationElement = document.querySelector(".location p");
 const notificationElement = document.querySelector(".notification");
+const notificationCandy = document.querySelector(".candyPermission");
 
 
 const weather = {};
@@ -51,6 +52,7 @@ function getWeather(latitude, longitude){
         })
         .then(function(){
             displayWeather();
+            showCandyPermissionNotification();
         });
 }
 
@@ -59,5 +61,13 @@ function displayWeather(){
     tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
     descElement.innerHTML = weather.description;
     locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+}
+
+function showCandyPermissionNotification(){
+    if(weather.temperature.value < 30){
+        notificationCandy.innerHTML = `<h2 class="section-subheading candyPermission">Możesz wcinać słodycze, nie jest zbyt gorąco :-)</h2>`;
+    } else {
+        notificationCandy.innerHTML = `<h2 class="section-subheading candyPermission">Jest zbyt gorąco, lepiej napis się wody :-(</h2>`;
+    }
 }
 
