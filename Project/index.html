@@ -18,9 +18,9 @@
         <link href="css/styles.css" rel="stylesheet">
         <link href="css/customStyles.css" rel="stylesheet">
         <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+        <script src="./assets/jquery-3.6.4.js"></script>
         <script src="./js/validation.js"></script>
         <script src="./js/maps.js"></script>
-
 
     </head>
     <body id="page-top" onload="getLocation()" >
@@ -247,136 +247,12 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Kontakt</h2>
-                    <h3 class="section-subheading text-muted">Jaką paczkę słodyczy chcesz od nas zamówić, daj nam znać!</h3>
+                    <h3 class="section-subheading text-muted">Jaką paczkę słodyczy chcesz od nas zamówić? Daj nam znać!</h3>
                 </div>
 
                 <div id="formularz">
-                    <div>
-                        <form action="mailto:test@pollub.pl" method="post" onsubmit="return sprawdz()">
-                            <table>
-                                <tbody>
-                                <tr class="design-form">
-                                    <td><label for="nameField">Nazwisko:</label></td>
-                                    <td colspan="2">
-                                        <input type="text" name="name" id="nameField" class="design-field-form">
-                                    </td>
-                                    <td id="nazw_error" class="czerwone">Wpisz poprawnie nazwisko!</td>
-                                </tr>
-                                <tr class="design-form">
-                                    <td><label for="ageField">Wiek:</label></td>
-                                    <td colspan="2">
-                                        <input type="text" name="age" id="ageField" class="design-field-form">
-                                    </td>
-                                    <td id="wiek_error" class="czerwone">Wpisz poprawnie wiek!</td>
-                                </tr>
-                                <tr class="design-form">
-                                    <td><label for="countryField">Państwo:</label> </td>
-                                    <td colspan="3">
-                                        <select size="1" name="country" id="countryField">
-                                            <option value="PL">Polska</option>
-                                            <option value="GE">Germany</option>
-                                            <option value="UK">United Kingdom</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr class="design-form">
-                                    <td><label for="emailField">Email:</label></td>
-                                    <td colspan="2"><input type="text" name="email" id="emailField" class="design-field-form" ></td>
-                                    <td id="email_error" class="czerwone">Wpisz poprawnie email!</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="form_plain_text"> Zamawiam paczkę słodyczy z firmy: </td>
-                                </tr>
-                                <tr class="linear-design">
-                                    <td>
-                                        <input type="checkbox" name="languageCheckbox" value="Milka" id="milkaField">
-                                        <label for="milkaField">Milka</label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" name="languageCheckbox" value="Kinder" id="kinderField">
-                                        <label for="kinderField">Kinder</label>
-                                    </td>
-                                    <td>
-                                        <input type="checkbox" name="languageCheckbox" value="Maltesers" id="maltesersField">
-                                        <label for="maltesersField">Maltesers</label>
-                                    </td>
-                                    <td id="produkt_error" class="czerwone">Musisz wybrać produkt!</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="4" class="form_plain_text">Sposób zapłaty</td>
-                                </tr>
-                                <tr class="linear-design">
-                                    <td><label><input type="radio" name="platnosc" value="EuroCard"> EuroCard </label></td>
-                                    <td><label><input type="radio" name="platnosc" value="Visa"> Visa </label></td>
-                                    <td><label><input type="radio" name="platnosc" value="Przelew"> Przelew bankowy</label></td>
-                                    <td id="zaplata_error" class="czerwone">Musisz wskazać sposób płatności!</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <input type="submit" value="Wyslij" class="design-btn">
-                            <input type="reset" value="Anuluj" class="design-btn">
-                        </form>
-                    </div>
+                   <!--Dynamic load form by Jquerry-->
                 </div>
-
-
-
-
-
-<!--                <form id="contactForm" data-sb-form-api-token="API_TOKEN">-->
-<!--                    <div class="row align-items-stretch mb-5">-->
-<!--                        <div class="col-md-6">-->
-<!--                            <div class="form-group">-->
-<!--                                &lt;!&ndash; Name input&ndash;&gt;-->
-<!--                                <input class="form-control" id="name" type="text" placeholder="Twoje Imie *" data-sb-validations="required">-->
-<!--                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>-->
-<!--                            </div>-->
-<!--                            <div class="form-group">-->
-<!--                                &lt;!&ndash; Email address input&ndash;&gt;-->
-<!--                                <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email">-->
-<!--                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>-->
-<!--                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>-->
-<!--                            </div>-->
-<!--                            <div class="form-group mb-md-0">-->
-<!--                                &lt;!&ndash; Phone number input&ndash;&gt;-->
-<!--                                <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required">-->
-<!--                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-md-6">-->
-<!--                            <div class="form-group form-group-textarea mb-md-0">-->
-<!--                                &lt;!&ndash; Message input&ndash;&gt;-->
-<!--                                <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea>-->
-<!--                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; Submit success message&ndash;&gt;-->
-<!--                    &lt;!&ndash;&ndash;&gt;-->
-<!--                    &lt;!&ndash; This is what your users will see when the form&ndash;&gt;-->
-<!--                    &lt;!&ndash; has successfully submitted&ndash;&gt;-->
-<!--                    <div class="d-none" id="submitSuccessMessage">-->
-<!--                        <div class="text-center text-white mb-3">-->
-<!--                            <div class="fw-bolder">Form submission successful!</div>-->
-<!--                            To activate this form, sign up at-->
-<!--                            <br>-->
-<!--                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; Submit error message&ndash;&gt;-->
-<!--                    &lt;!&ndash;&ndash;&gt;-->
-<!--                    &lt;!&ndash; This is what your users will see when there is&ndash;&gt;-->
-<!--                    &lt;!&ndash; an error submitting the form&ndash;&gt;-->
-<!--                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>-->
-<!--                    &lt;!&ndash; Submit Button&ndash;&gt;-->
-<!--                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div>-->
-<!--                </form>-->
-
-
-
-
-
-
             </div>
         </section>
         <!-- Footer-->

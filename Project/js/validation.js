@@ -1,3 +1,21 @@
+
+window.addEventListener("load", () => {
+    loadDesktopForm();
+});
+window.addEventListener("resize", () => {
+    loadDesktopForm();
+});
+
+function loadDesktopForm(){
+    let windowWidth = $(window).width();
+    if(windowWidth > 1200){
+        $("#formularz").load("contactFormDesktop.html");
+    } else {
+        $("#formularz").load("contactFormMobile.html");
+    }
+}
+
+
 function sprawdzPole(pole_id,obiektRegex) {
     let obiektPole = document.getElementById(pole_id);
     return obiektRegex.test(obiektPole.value);
@@ -36,37 +54,37 @@ function sprawdz() {
 
     if (!nazwa) {
         ok=false;
-        document.getElementById("nazw_error").style.display = "inline";
+        document.getElementById("nazw_error").style.visibility = "visible";
     } else {
-        document.getElementById("nazw_error").style.display = "none";
+        document.getElementById("nazw_error").style.visibility = "hidden";
     }
 
     if (!wiek) {
         ok=false;
-        document.getElementById("wiek_error").style.display = "inline";
+        document.getElementById("wiek_error").style.visibility = "visible";
     } else {
-        document.getElementById("wiek_error").style.display = "none";
+        document.getElementById("wiek_error").style.visibility = "hidden";
     }
 
     if (!email) {
         ok=false;
-        document.getElementById("email_error").style.display = "inline";
+        document.getElementById("email_error").style.visibility = "visible";
     } else {
-        document.getElementById("email_error").style.display = "none";
+        document.getElementById("email_error").style.visibility = "hidden";
     }
 
     if (!jezyki) {
         ok=false;
-        document.getElementById("produkt_error").style.display = "inline";
+        document.getElementById("produkt_error").style.visibility = "visible";
     } else {
-        document.getElementById("produkt_error").style.display = "none";
+        document.getElementById("produkt_error").style.visibility = "hidden";
     }
 
     if (!sposobPlatnosci) {
         ok=false;
-        document.getElementById("zaplata_error").style.display = "inline";
+        document.getElementById("zaplata_error").style.visibility = "visible";
     } else {
-        document.getElementById("zaplata_error").style.display = "none";
+        document.getElementById("zaplata_error").style.visibility = "hidden";
     }
 
     //Okienko alert

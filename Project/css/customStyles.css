@@ -106,7 +106,13 @@ label {
 }
 
 .design-btn:first-of-type{
-    margin-left: 45px;
+    margin-left: 20%;
+}
+
+@media screen and (min-width: 1200px){
+    .design-btn:first-of-type{
+        margin-left: 34%;
+    }
 }
 
 #formularz {
@@ -126,10 +132,27 @@ label {
 }
 
 tbody .czerwone {
-    display: none;
+    visibility: hidden;
     color: #ff0000 !important;
     margin-left: 30px;
 }
+
+table tr label:first-of-type{
+    margin-left: 15px;
+}
+
+table tr p:first-of-type{
+    margin-left: 15px;
+}
+
+#milkaField {
+    margin-left: 15px;
+}
+
+table tr p{
+    margin-bottom: 0;
+}
+
 
 /*Koniec stylów formularzy*/
 
@@ -235,5 +258,6 @@ tbody .czerwone {
 }
 
 /*Koniec stylów dla obecnej pogody*/
+
 
 
