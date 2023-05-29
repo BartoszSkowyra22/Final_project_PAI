@@ -71,9 +71,9 @@ label {
     width: 220px;
 }
 
-tbody .czerwone {
+tbody .czerwone p{
     display: none;
     color: #ff0000 !important;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 

@@ -1,0 +1,76 @@
+<div>
+    <form action="mailto:test@pollub.pl" method="post" onsubmit="return sprawdz()">
+        <table>
+            <tbody>
+            <tr class="design-form">
+                <td><label for="nameField">Nazwisko:</label></td>
+                <td colspan="2">
+                    <input type="text" name="name" id="nameField" class="design-field-form">
+                </td>
+            </tr>
+            <tr class="design-form">
+                <td id="nazw_error" class="czerwone" colspan="3">Wpisz poprawnie nazwisko!</td>
+            </tr>
+            <tr class="design-form">
+                <td><label for="ageField">Wiek:</label></td>
+                <td colspan="2">
+                    <input type="text" name="age" id="ageField" class="design-field-form">
+                </td>
+            </tr>
+            <tr class="design-form">
+                <td id="wiek_error" class="czerwone" colspan="3">Wpisz poprawnie wiek!</td>
+            </tr>
+            <tr class="design-form">
+                <td><label for="countryField">Państwo:</label> </td>
+                <td colspan="2">
+                    <select size="1" name="country" id="countryField">
+                        <option value="PL">Polska</option>
+                        <option value="GE">Germany</option>
+                        <option value="UK">United Kingdom</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="design-form">
+                <td><label for="emailField">Email:</label></td>
+                <td colspan="2"><input type="text" name="email" id="emailField" class="design-field-form" ></td>
+            </tr>
+            <tr class="design-form">
+                <td id="email_error" class="czerwone" colspan="3">Wpisz poprawnie email!</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form_plain_text"><p>Zamawiam paczkę słodyczy z firmy: </p></td>
+            </tr>
+            <tr class="linear-design">
+                <td>
+                    <input type="checkbox" name="languageCheckbox" value="Milka" id="milkaField">
+                    <label for="milkaField">Milka</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="languageCheckbox" value="Kinder" id="kinderField">
+                    <label for="kinderField">Kinder</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="languageCheckbox" value="Maltesers" id="maltesersField">
+                    <label for="maltesersField">Maltesers</label>
+                </td>
+            </tr>
+            <tr class="design-form">
+                <td id="produkt_error" class="czerwone" colspan="3">Musisz wybrać produkt!</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form_plain_text"><p>Sposób zapłaty:</p></td>
+            </tr>
+            <tr class="linear-design">
+                <td><label><input type="radio" name="platnosc" value="EuroCard"> EuroCard </label></td>
+                <td><label><input type="radio" name="platnosc" value="Visa"> Visa </label></td>
+                <td><label><input type="radio" name="platnosc" value="Przelew"> Przelew bankowy</label></td>
+            </tr>
+            <tr class="design-form">
+                <td id="zaplata_error" class="czerwone" colspan="3">Musisz wskazać sposób płatności!</td>
+            </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="Wyslij" class="design-btn">
+        <input type="reset" value="Anuluj" class="design-btn">
+    </form>
+</div>
