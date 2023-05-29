@@ -1,26 +1,63 @@
-fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Lublin?unitGroup=metric&key=E3QC7X8E5L3PVYLVPLV5UPATU&contentType=json", {
-    method: 'GET',
-    headers: {
 
-    },
+const iconElement = document.querySelector(".weather-icon");
+const tempElement = document.querySelector(".temperature-value p");
+const descElement = document.querySelector(".temperature-description p");
+const locationElement = document.querySelector(".location p");
+const notificationElement = document.querySelector(".notification");
 
-}).then(response => {
-    if (!response.ok) {
-        throw response; //check the http response code and if isn't ok then throw the response as an error
-    }
 
-    return response.json(); //parse the result as JSON
+const weather = {};
 
-}).then(response => {
-    //response now contains parsed JSON ready for use
-    processWeatherData(response);
+weather.temperature = {
+    unit : "celsius"
+}
 
-}).catch((errorResponse) => {
-    if (errorResponse.text) { //additional error information
-        errorResponse.text().then( errorMessage => {
-            //errorMessage now returns the response body which includes the full error message
+const KELVIN = 273;
+const key = "82005d27a116c2880c8f0fcb866998a0";
+
+if('geolocation' in navigator){
+    navigator.geolocation.getCurrentPosition(setPosition, showError);
+}else{
+    notificationElement.style.display = "block";
+    notificationElement.innerHTML = "<p>Twoja przeglądarka nieobsługuje geolokalizacji</p>";
+}
+
+
+function setPosition(position){
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+
+    getWeather(latitude, longitude);
+}
+
+function showError(error){
+    notificationElement.style.display = "block";
+    notificationElement.innerHTML = `<p> ${error.message} </p>`;
+}
+
+function getWeather(latitude, longitude){
+    let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&lang=pl&appid=${key}`;
+
+    fetch(api)
+        .then(function(response){
+            return response.json();
         })
-    } else {
-        //no additional error information
-    }
-});
+        .then(function(data){
+            weather.temperature.value = Math.floor(data.main.temp - KELVIN);
+            weather.description = data.weather[0].description;
+            weather.iconId = data.weather[0].icon;
+            weather.city = data.name;
+            weather.country = data.sys.country;
+        })
+        .then(function(){
+            displayWeather();
+        });
+}
+
+function displayWeather(){
+    iconElement.innerHTML = `<img src="./assets/img/icons/${weather.iconId}.png" alt="Weather icon">`;
+    tempElement.innerHTML = `${weather.temperature.value}°<span>C</span>`;
+    descElement.innerHTML = weather.description;
+    locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+}
+
