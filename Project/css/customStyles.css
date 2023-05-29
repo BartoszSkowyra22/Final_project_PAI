@@ -144,6 +144,10 @@ tbody .czerwone {
 
     border-radius: 10px;
     padding-bottom : 50px;
+
+    -webkit-box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px -11px rgba(66, 68, 90, 1);
 }
 
 .app-title{
@@ -223,6 +227,11 @@ tbody .czerwone {
     color: #2c2c2c;
     text-align: center;
     font-size: 0.8em;
+}
+
+.candyPermission{
+    margin-top: 40px;
+    margin-bottom: 0;
 }
 
 /*Koniec stylów dla obecnej pogody*/
