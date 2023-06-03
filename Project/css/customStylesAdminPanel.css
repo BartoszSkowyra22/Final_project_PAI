@@ -1,0 +1,29 @@
+/*Style tabeli w panelu administracyjnym*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.adminPanelTable th, td {
+    padding: 8px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.adminPanelTable th {
+    background-color: #f2f2f2;
+}
+
+.adminPanelTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#administrationPanel button {
+    border-radius: 3px;
+    padding: 3px 8px;
+    background-color: #c9c9c9;
+}
+#clearLocalStorageBtn{
+    margin-top: 10px;
+}
